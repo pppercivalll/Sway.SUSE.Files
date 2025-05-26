@@ -4,6 +4,8 @@
 
 ![screenshot](./src/screenshots/screenshot-20250526-105918.png)
 
+---
+
 ## 📦 Components
 
 | Component  | Description |
