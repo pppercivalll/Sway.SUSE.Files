@@ -1,8 +1,8 @@
 # My SUSESway.Files
 
-> My custom dotfiles for a personalized and aesthetic Linux desktop setup.
+> My custom dotfiles for my personalized Linux desktop setup.
 
-![screenshot](./pppercivalll/Sway.SUSE.Files/src/wallpapers/)
+![screenshot](./src/screenshots/screenshot-20250526-105918.png)
 
 ## 📦 Components
 
@@ -47,6 +47,6 @@
 
 ## 📸 More Screenshots
 
-![screenshot2](./path/to/screenshot2.png)
+![screenshot2](./src/screenshots/screenshot-20250526-110454.png)
 
 ---
