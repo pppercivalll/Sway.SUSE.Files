@@ -1,0 +1,23 @@
+configuration {
+  display-drun: "";
+  drun-display-format: "{icon} {name}";
+  font: "JetBrainsMono Nerd Font Medium 12";
+  modi: "drun";
+  show-icons: true;
+} 
+
+@theme "gruvbox-dark-soft.rasi"
+
+* {
+  border: 0;
+  border-radius: 8;
+  margin: 0;
+  padding: 2;
+}
+
+window {
+  width: 350px;
+}
+listview {
+  lines: 8;
+}

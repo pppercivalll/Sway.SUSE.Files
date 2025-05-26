@@ -1,0 +1,220 @@
+font pango: Iosevka Nerd Font 12
+
+gaps inner 4
+gaps outer 4
+
+# these two lines removes the titlebar
+default_border pixel 4
+default_floating_border pixel 4
+
+# Wallpapers
+set $wallpapers_path $HOME/Pictures/Wallpapers/Random/
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+
+### Gruvbox
+set $light #ebdbb2
+set $dark #3c3836
+set $focused #3c3836
+set $inactive #282828 
+set $unfocused #282828
+set $urgent #b8bb26
+
+# Window border colors (Gruvbox theme)
+client.focused          $focused    $focused    $light   $focused    $focused
+client.focused_inactive $inactive   $inactive   $light   $inactive   $inactive
+client.unfocused        $unfocused  $unfocused  $light  $unfocused  $unfocused
+client.urgent           $urgent     $urgent     $light  $urgent     $urgent
+
+###### SwayFX Configs ######
+blur enable
+blur_xray enable
+blur_passes 1
+blur_radius 1
+shadows enable
+shadow_blur_radius 10
+corner_radius 5
+layer_effects "waybar" shadows enable; corner_radius 5; blur enable; default_border pixel 3
+default_dim_inactive 0.25
+
+bar {
+	swaybar_command waybar
+}
+
+# Touchpad configuration
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+# XDG Desktop Portal and Environment
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+exec swayidle -w \
+    timeout 300 'gtklock' \
+    timeout 420 'loginctl suspend' \
+    after-resume 'swaymsg "output * dpms on"' \
+    before-sleep 'gtklcok' \
+    lock 'gtklock'
+
+# variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+set $menu rofi -show drun
+set $files thunar
+set $browser firefox
+
+# common bindings
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+f exec $files
+bindsym $mod+b exec $browser
+bindsym $mod+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec 'wlogout -b 5 --protocol layer-shell'
+floating_modifier $mod normal
+bindsym $mod+Escape exec 'gtklock'
+# Fullscreen screenshot
+bindsym Print exec grim ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png && notify-send "Screenshot saved" "Fullscreen screenshot saved to ~/Pictures/Screenshots"
+# Select region to screenshot
+bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png  && notify-send "Screenshot saved" "Region screenshot saved to ~/Pictures/Screenshots"
+# Screenshot to clipboard (selected region)
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied" "Region screenshot copied to clipboard"
+# Screenshot to clipboard (full screen)
+bindsym $mod+Print exec grim - | wl-copy && notify-send "Screenshot copied" "Fullscreen screenshot copied to clipboard"
+
+# more bindings
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+v floating toggle
+bindsym $mod+Shift+f fullscreen
+bindsym $mod+space focus mode_toggle
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+	bindsym $left  resize shrink width 20px
+	bindsym $up    resize shrink height 20px
+	bindsym $right resize grow width 20px
+	bindsym $down  resize grow height 20px
+
+	bindsym Left  resize shrink width 20px
+	bindsym Up    resize shrink height 20px
+	bindsym Right resize grow width 20px
+	bindsym Down  resize grow height 20px
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+# Auto float apps
+	for_window [app_id="system-config-printer"] floating enable
+	for_window [app_id="gnome-calculator"] floating enable	        
+	for_window [app_id="blueman-manager"] floating enable
+	for_window [app_id="keepassxc"] floating enable
+	for_window [app_id="(?i)mpv"] floating enable
+	for_window [app_id="pavucontrol"] floating enable
+	for_window [app_id="(?i)thunar"] floating enable
+	for_window [app_id="engrampa"] floating enable
+	for_window [app_id="tlp-ui"] floating enable
+	for_window [app_id="nm-connection-editor$"] floating enable
+	for_window [app_id="simple-scan"] floating enable
+	for_window [app_id="firewall-config"] floating enable
+	for_window [app_id="(pavucontrol|psensor)"] floating enable
+	for_window [title="^Open File$"] floating enable
+	for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
+	for_window [title="Weather report: 44240 - qutebrowser"] floating enable
+	for_window [window_role="GtkFileChooserDialog"] resize set 640 480
+	for_window [window_role="GtkFiileChooserDialog"] move position center
+
+# default floating
+	for_window [window_role="pop-up"] floating enable
+	for_window [window_role="bubble"] floating enable
+	for_window [window_role="task_dialog"] floating enable
+	for_window [window_role="Preferences"] floating enable
+	for_window [window_type="dialog"] floating enable
+	for_window [window_type="menu"] floating enable
+	for_window [instance="update_installer"] floating enable
+	for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable;
+	for_window [title="(?:Open|Save) (?:File|Folder|As)"] resize set 800 600	
+
+# Audio control
+# Volume up
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 && notify-send "Volume ↑" "$(pamixer --get-volume)%"
+# Volume down
+bindsym XF86AudioLowerVolume exec pamixer -d 5 && notify-send "Volume ↓" "$(pamixer --get-volume)%"
+# Mute toggle
+bindsym XF86AudioMute exec pamixer -t && notify-send "Mute toggled" "$(pamixer --get-mute)"
+# Mic mute
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+# Brightness control
+# Brightness up
+#bindsym XF86MonBrightnessUp exec brightnessctl set +5% && notify-send "Brightness ↑" "$(brightnessctl get)%"
+
+# Brightness down
+#bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && notify-send "Brightness ↓" "$(brightnessctl get)%"
+
+# Brightness up
+bindsym XF86MonBrightnessUp exec brightnessctl set +5% && notify-send "Brightness ↑" "$(brightnessctl | sed -n 's/.*(\([0-9]\+%\)).*/\1/p')"
+
+# Brightness down
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && notify-send "Brightness ↓" "$(brightnessctl | sed -n 's/.*(\([0-9]\+%\)).*/\1/p')"
+
+
+# Autostart
+exec mako
+exec_always nm-applet
+exec_always blueman-applet
+exec_always ~/.local/bin/autotiling/autotiling
+exec_always /usr/libexec/polkit-gnome-authentication-agent-1
+
+# Focus behavior
+focus_follows_mouse yes
+focus_on_window_activation focus
+
+# input <mouse device id> {
+# 	accel_profile flat
+# }
