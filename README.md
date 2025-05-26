@@ -13,7 +13,7 @@
 | SwayFX     | Tiling Wayland compositor forked from i3WM|
 | Swww       | Highly efficient and lightweight wallpapers generator  |
 | Alacritty  | OpenGL based terminal |
-| Starship   | Fast and customizable shell prompt |
+| Yazi       | Blazing fast terminal file manager|
 | Fastfetch  | Fast system fetch tool with custom ASCII/logo |
 | Cava       | Terminal-based audio visualizer |
 | Waybar     | Top bar replacement with module support |
@@ -24,6 +24,7 @@
 | Mako       | Lightweight notification daemon for Wayland compositor  |
 | Swaylock   | Screenlocker for Wayland  |
 | GTK-Lock   | An alternative for Swaylock  |
+| ETC        | And et cetera |
 
 ---
 
