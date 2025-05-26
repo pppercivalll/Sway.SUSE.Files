@@ -1,0 +1,16 @@
+# Folder
+BetterDiscord Installer/
+Code/
+catfish/
+configstore/
+discord/
+Electron/
+dconf/
+flutter/
+go/
+procps/
+pulse/
+
+# File
+mimeapps.list
+pavucontrol.ini
