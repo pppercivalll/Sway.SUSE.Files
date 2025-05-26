@@ -43,8 +43,6 @@
 
 ---
 
----
-
 ## 📸 More Screenshots
 
 ![screenshot2](./src/screenshots/screenshot-20250526-110454.png)
