@@ -10,20 +10,20 @@
 
 | Component  | Description |
 |------------|-------------|
-| SwayFX     | Tiling Wayland compositor forked from i3WM|
-| Swww       | Highly efficient and lightweight wallpapers generator  |
+| SwayFX     | Tiling Wayland compositor that forked from i3WM but with eye candy|
+| Swww       | Highly efficient and lightweight wallpaper generator  |
 | Alacritty  | OpenGL based terminal |
 | Yazi       | Blazing fast terminal file manager|
 | Fastfetch  | Fast system fetch tool with custom ASCII/logo |
 | Cava       | Terminal-based audio visualizer |
 | Waybar     | Top bar replacement with module support |
-| Wlogout    | Is a logout menu for wayland environments |
+| Wlogout    | Logout menu for wayland environments |
 | Cava       | Terminal-based audio visualizer |
-| Rofi       | Applications launcher  |
+| Rofi       | Application launcher, an alternative to Wofi in Wayland environment |
 | NWG-Look   | GTK settings editor, designed to work properly in wlroots-based Wayland environment  |
 | Mako       | Lightweight notification daemon for Wayland compositor  |
-| Swaylock   | Screenlocker for Wayland  |
-| GTK-Lock   | An alternative for Swaylock  |
+| Swaylock   | Screenlocker for Sway environment |
+| GTK-Lock   | An alternative to Swaylock  |
 | ETC        | And et cetera |
 
 ---
@@ -36,7 +36,7 @@
 | **Window Manager** | SwayFX                                                  |
 | **Display Server** | Wayland                                                 |
 | **Terminal**       | Alacritty                                               |
-| **Font**           | JetBrains Mono                                          |
+| **Font**           | JetBrains Mono/Iosevka/Geist Mono (Nerd Font)           |
 | **Display Manager**| SDDM (https://github.com/Keyitdev/sddm-astronaut-theme) |
 | **Shell**          | Bash with BLE (https://github.com/akinomyoga/ble.sh)    |
 | **Bar**            | Waybar                                                  |
