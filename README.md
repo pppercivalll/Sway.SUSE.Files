@@ -1,6 +1,6 @@
 # My SUSESway.Files
 
-> My Gruvbox themed but with eye candy Wayland window tiling compositor, openSUSESwayFX.
+> My Gruvbox themed desktop but with eye candy Wayland window tiling compositor, openSUSESwayFX.
 
 ![screenshot](./src/screenshots/screenshot-20250526-105918.png)
 
