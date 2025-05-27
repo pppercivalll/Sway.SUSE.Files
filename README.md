@@ -1,6 +1,6 @@
 # My SUSESway.Files
 
-> My custom dotfiles for my personalized Linux desktop setup.
+> My Gruvbox themed but with eye candy Wayland window tiling compositor, openSUSESwayFX.
 
 ![screenshot](./src/screenshots/screenshot-20250526-105918.png)
 
@@ -46,7 +46,7 @@
 
 ---
 
-## 📸 More Screenshots
+## 📸 More Screenshot(s)
 
 ![screenshot2](./src/screenshots/screenshot-20250526-110454.png)
 
