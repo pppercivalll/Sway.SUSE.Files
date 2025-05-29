@@ -17,7 +17,7 @@
 | Fastfetch  | Fast system fetch tool with custom ASCII/logo |
 | Cava       | Terminal-based audio visualizer |
 | Waybar     | Top bar replacement with module support |
-| Wlogout    | Logout menu for wayland environments |
+| Wlogout    | Logout menu for Wayland environment |
 | Cava       | Terminal-based audio visualizer |
 | Rofi       | Application launcher, an alternative to Wofi in Wayland environment |
 | NWG-Look   | GTK settings editor, designed to work properly in wlroots-based Wayland environment  |
