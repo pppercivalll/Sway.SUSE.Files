@@ -1,11 +1,11 @@
-# My openSUSESway.Files
+# openSUSESway.Files
 
 > My Gruvbox themed openSUSE desktop. Yet with eye candy Wayland window tiling compositor, SwayFX.
 
 ![screenshot](./src/screenshots/screenshot-20250526-105918.png)
 
 ---
-## 📦 Components
+## Components
 
 | Component  | Description |
 |------------|-------------|
