@@ -5,7 +5,6 @@
 ![screenshot](./src/screenshots/screenshot-20250526-105918.png)
 
 ---
-
 ## 📦 Components
 
 | Component  | Description |
@@ -27,7 +26,6 @@
 | ETC        | And et cetera |
 
 ---
-
 ## 🧰 System Info
 
 | Type               | Details                                                 |
@@ -45,9 +43,13 @@
 | **Cursor**         | Future Cursor (https://www.gnome-look.org/p/1457141)    |
 
 ---
-
 ## 📸 More Screenshot(s)
 
 ![screenshot2](./src/screenshots/screenshot-20250526-110454.png)
+
+---
+## License
+
+This project is licensed under the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
 
 ---
