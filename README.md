@@ -26,7 +26,7 @@
 | ETC        | And et cetera |
 
 ---
-## 🧰 System Info
+## System Info
 
 | Type               | Details                                                 |
 |--------------------|---------------------------------------------------------|
@@ -43,7 +43,7 @@
 | **Cursor**         | Future Cursor (https://www.gnome-look.org/p/1457141)    |
 
 ---
-## 📸 More Screenshot(s)
+## More Screenshot(s)
 
 ![screenshot2](./src/screenshots/screenshot-20250526-110454.png)
 
